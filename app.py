@@ -24,7 +24,7 @@ for plan in soup.find_all('li', class_="upf-planCard--border-shadow"):
     benefits = plan.find('div', class_='upf-planCard__feature-list').text
     
     # Add the plan to the list if it's not already included
-    if name not in plan_list:
+    if {name, benefits} not in plan_list:
         plan_list.append({name, benefits})
 
 # Print each plan's details
