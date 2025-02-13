@@ -1,2 +1,5 @@
 # T-Mobile Plans
- List of current T-mobile Plans with included benefits
+
+A terminal program to parse details for the current T-mobile Plans with included benefits
+
+![Preview of terminal](terminal.png)
