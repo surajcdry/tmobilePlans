@@ -55,11 +55,15 @@ def save_to_csv(plan_list):
     with open(csv_file, 'w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
         # Write header
-        writer.writerow(['Name', 'Benefits'])
+        writer.writerow(['Time Fetched', 'Name', 'Benefits'])
+
+        # write time fetched row
+        est = pytz.timezone('America/New_York') # timezone change
+        timestamp = datetime.datetime.now(est).strftime("%Y-%m-%d %H:%M:%S %Z")
         
         # Write plan data
         for name, benefits in plan_list:
-            writer.writerow([name, benefits])
+            writer.writerow([timestamp, name, benefits])
 
 def save_log(success, message):
     """Save execution log with timestamp"""
